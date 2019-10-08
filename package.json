@@ -1,0 +1,20 @@
+{
+  "name": "sddtc-sig-typescript",
+  "version": "0.0.1",
+  "description": "test on typescript",
+  "scripts": {
+    "lint": "tslint 'src/**/*.ts'",
+    "test": "yarn lint && jest --no-cache -c test/jest.config.js --forceExit --coverage --verbose --detectOpenHandles"
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.11",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.20.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-immutable": "^6.0.1",
+    "typescript": "^3.7.0-beta"
+  }
+}
