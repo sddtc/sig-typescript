@@ -1,19 +1,11 @@
 import { Optional } from '../types/typeHelpers';
 
-interface Foo {
+export interface Foo {
   bar: Bar;
 }
 
-interface Bar {
+export interface Bar {
   baz: () => void;
 }
 
-const fooObj = {
-  bar: { baz: () => 'print it.' }
-}
-
-const optionalChaning = (foo: Optional<Foo>) => {
-  return foo?.bar.baz();
-}
-
-console.log(optionalChaning(fooObj));
+export const optionalChaning = (foo: Optional<Foo>) => foo?.bar.baz()
