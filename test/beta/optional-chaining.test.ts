@@ -1,10 +1,11 @@
 import { optionalChaning, Foo, tryGetFirstElement } from '../../src/beta/optional-chaining';
 
 describe('optional chaning in object', () => {
-  it('should return true if param is existed', () => {
-    const foo: Foo = { bar: { baz: jest.fn() } };
+  it('should return true if foo is not null or undefined', () => {
+    const bazFn = jest.fn();
+    const foo: Foo = { bar: { baz: bazFn } };
     optionalChaning(foo);
-    expect(foo.bar.baz).toBeCalled;
+    expect(bazFn).toBeCalled;
   });
 
   it('should return undefine when foo is null', () => {
@@ -13,6 +14,11 @@ describe('optional chaning in object', () => {
 
   it('should return undefine when foo is undefined', () => {
     expect(optionalChaning(undefined)).toBe(undefined);
+  });
+
+  it('should return undefined if foo without bar', () => {
+    const foo: Foo = {};
+    expect(optionalChaning(foo)).toBe(undefined);
   });
 });
 
