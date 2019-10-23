@@ -41,3 +41,10 @@ export const makeRequest = (url: string, log?: (msg: string) => void) => {
   }
   return result;
 };
+
+export const makeRequestPlus = (url: string, log?: (msg: string) => void) => {
+  log?.('Oops');
+  const result = fetch(url);
+  log?.('done.');
+  return result;
+};

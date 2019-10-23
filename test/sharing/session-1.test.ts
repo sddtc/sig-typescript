@@ -1,4 +1,4 @@
-import { getUser, getUserPlus, makeRequest } from '../../src/sharing/session-1';
+import { getUser, getUserPlus, makeRequest, makeRequestPlus } from '../../src/sharing/session-1';
 
 describe('Optional Chaining', () => {
   describe('old one', () => {
@@ -64,16 +64,31 @@ describe('Optional Chaining', () => {
   });
 
   describe('with optional function', () => {
-    it('log is null', () => {
-      const log = null as any;
-      const result = makeRequest('fake-url', log);
-      expect(result).toEqual({ result: `fetch fake-url successfully.` });
-    });
+    describe('old one', () => {
+      it('log is null', () => {
+        const log = null as any;
+        const result = makeRequest('fake-url', log);
+        expect(result).toEqual({ result: `fetch fake-url successfully.` });
+      });
 
-    it('log is undefined', () => {
-      const log = undefined;
-      const result = makeRequest('fake-url', log);
-      expect(result).toEqual({ result: `fetch fake-url successfully.` });
+      it('log is undefined', () => {
+        const log = undefined;
+        const result = makeRequest('fake-url', log);
+        expect(result).toEqual({ result: `fetch fake-url successfully.` });
+      });
+    });
+    describe('new one', () => {
+      it('log is null', () => {
+        const log = null as any;
+        const result = makeRequestPlus('fake-url', log);
+        expect(result).toEqual({ result: `fetch fake-url successfully.` });
+      });
+
+      it('log is undefined', () => {
+        const log = undefined;
+        const result = makeRequestPlus('fake-url', log);
+        expect(result).toEqual({ result: `fetch fake-url successfully.` });
+      });
     });
   });
 });
