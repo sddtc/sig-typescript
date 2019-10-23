@@ -15,7 +15,10 @@ interface UserAttributes {
   idToken: string;
 }
 
-export const getUser = (request: Request) => {
+export const getUser = (request: Optional<Request>) => {
+  if (request === null || request === undefined) {
+    return undefined;
+  }
   if (request.user === null || request.user === undefined) {
     return undefined;
   }

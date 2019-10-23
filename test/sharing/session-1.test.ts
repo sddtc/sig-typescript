@@ -20,6 +20,16 @@ describe('Optional Chaining', () => {
       const result = getUser({ user: undefined });
       expect(result).toBeUndefined();
     });
+
+    it('request is null', () => {
+      const result = getUser(null);
+      expect(result).toBeUndefined();
+    });
+
+    it('request is undefined', () => {
+      const result = getUser(undefined);
+      expect(result).toBeUndefined();
+    });
   });
 
   describe('new one', () => {
