@@ -25,6 +25,6 @@ export const getUser = (request: Optional<Request>) => {
   return request.user.getUserAttributes(request.user.userId);
 };
 
-export const getUserPlus = (request: Request) => {
-  return request.user?.getUserAttributes(request.user.userId);
+export const getUserPlus = (request: Optional<Request>) => {
+  return request?.user?.getUserAttributes(request.user.userId);
 };

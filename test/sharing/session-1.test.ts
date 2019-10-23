@@ -51,5 +51,15 @@ describe('Optional Chaining', () => {
       const result = getUserPlus({ user: undefined });
       expect(result).toBeUndefined();
     });
+
+    it('request is null', () => {
+      const result = getUserPlus(null);
+      expect(result).toBeUndefined();
+    });
+
+    it('request is undefined', () => {
+      const result = getUserPlus(undefined);
+      expect(result).toBeUndefined();
+    });
   });
 });
