@@ -11,3 +11,5 @@ export const face = (bar: Optional<string>, isFoo: boolean) => {
   }
   return fooFn(isFoo);
 };
+
+export const facePlus = (bar: Optional<string>, isFoo: boolean) => barFn(bar) ?? fooFn(isFoo);
