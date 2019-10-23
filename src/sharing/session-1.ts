@@ -28,3 +28,16 @@ export const getUser = (request: Optional<Request>) => {
 export const getUserPlus = (request: Optional<Request>) => {
   return request?.user?.getUserAttributes(request.user.userId);
 };
+
+const fetch = (url: string) => ({ result: `fetch ${url} successfully.` });
+
+export const makeRequest = (url: string, log?: (msg: string) => void) => {
+  if (log !== null && log !== undefined) {
+    log('Oops');
+  }
+  const result = fetch(url);
+  if (log !== null && log !== undefined) {
+    log('done.');
+  }
+  return result;
+};

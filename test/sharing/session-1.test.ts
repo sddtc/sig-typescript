@@ -1,4 +1,4 @@
-import { getUser, getUserPlus } from '../../src/sharing/session-1';
+import { getUser, getUserPlus, makeRequest } from '../../src/sharing/session-1';
 
 describe('Optional Chaining', () => {
   describe('old one', () => {
@@ -60,6 +60,20 @@ describe('Optional Chaining', () => {
     it('request is undefined', () => {
       const result = getUserPlus(undefined);
       expect(result).toBeUndefined();
+    });
+  });
+
+  describe('with optional function', () => {
+    it('log is null', () => {
+      const log = null as any;
+      const result = makeRequest('fake-url', log);
+      expect(result).toEqual({ result: `fetch fake-url successfully.` });
+    });
+
+    it('log is undefined', () => {
+      const log = undefined;
+      const result = makeRequest('fake-url', log);
+      expect(result).toEqual({ result: `fetch fake-url successfully.` });
     });
   });
 });
