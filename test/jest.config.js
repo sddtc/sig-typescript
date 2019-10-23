@@ -5,12 +5,12 @@ module.exports = {
       tsConfig: 'tsconfig.json'
     }
   },
-  moduleFileExtensions: ['ts', 'js'],
+  moduleFileExtensions: [ 'ts', 'js' ],
   transform: {
     '^.+\\.(ts)$': 'ts-jest'
   },
-  testMatch: ['<rootDir>/test/**/*.test.(ts)'],
-  testPathIgnorePatterns: ['<rootDir>/node_modules'],
+  testMatch: [ '<rootDir>/test/sharing/*.test.(ts)' ],
+  testPathIgnorePatterns: [ '<rootDir>/node_modules' ],
   bail: true,
   verbose: true
-}
+};
