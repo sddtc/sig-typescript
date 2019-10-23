@@ -21,3 +21,7 @@ export const getUser = (request: Request) => {
   }
   return request.user.getUserAttributes(request.user.userId);
 };
+
+export const getUserPlus = (request: Request) => {
+  return request.user?.getUserAttributes(request.user.userId);
+};
